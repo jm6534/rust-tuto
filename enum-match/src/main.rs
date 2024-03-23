@@ -29,7 +29,17 @@ fn value_in_cents(coin: Coin) -> u32 {
     }
 }
 
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        None => None,
+        Some(_) => Some(999),
+    }
+}
+
 fn main() {
     println!("{}", value_in_cents(Coin::Penny));
     println!("{}", value_in_cents(Coin::Quarter(UsState::California)));
+
+    println!("{:?}", plus_one(Some(5)));
+    println!("{:?}", plus_one(None));
 }
